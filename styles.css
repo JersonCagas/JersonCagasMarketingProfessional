@@ -1,0 +1,484 @@
+/* ============================================
+   NISSAN DEALERSHIP PHILIPPINES – MAIN STYLESHEET
+   ============================================ */
+
+:root {
+    --nissan-red: #C3002F;
+    --nissan-red-dark: #9E0026;
+    --nissan-black: #1a1a1a;
+    --nissan-dark-gray: #2d2d2d;
+    --nissan-light-gray: #f5f5f5;
+    --nissan-white: #ffffff;
+    --transition: 0.3s ease;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 8px 30px rgba(195, 0, 47, 0.25);
+    --border-radius: 12px;
+    --border-radius-lg: 20px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--nissan-white);
+    color: var(--nissan-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Screen-reader-only label ---------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- Honeypot ---------- */
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ---------- Header ---------- */
+.header {
+    background: var(--nissan-black);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo-text {
+    color: var(--nissan-white);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.logo-text span {
+    display: block;
+}
+
+.logo-text span:first-child {
+    color: var(--nissan-red);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.rep-name {
+    color: #ccc;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    margin-top: 2px;
+    font-style: italic;
+}
+
+.contact-number {
+    color: var(--nissan-red);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--nissan-black) 0%, var(--nissan-dark-gray) 50%, #3a0a0f 100%);
+    color: var(--nissan-white);
+    padding: 50px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(195, 0, 47, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(195, 0, 47, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 5s ease-in-out infinite 1s;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.5px;
+}
+
+.hero h1 .highlight {
+    color: var(--nissan-red);
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--nissan-red);
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.hero p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    line-height: 1.7;
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--nissan-black);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.section-title h2 .highlight {
+    color: var(--nissan-red);
+}
+
+.section-title p {
+    color: #666;
+    font-size: 14px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* ---------- Form ---------- */
+.form-section {
+    padding: 50px 20px 60px;
+    background: var(--nissan-white);
+}
+
+.form-container {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--nissan-white);
+    border-radius: var(--border-radius-lg);
+    padding: 30px 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--nissan-red), #ff5555, var(--nissan-red));
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--nissan-black);
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.form-group label .required {
+    color: var(--nissan-red);
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: var(--font-family);
+    transition: var(--transition);
+    background: var(--nissan-white);
+    color: var(--nissan-black);
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--nissan-red);
+    box-shadow: 0 0 0 3px rgba(195, 0, 47, 0.1);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #ff4444;
+    box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+}
+
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 150px;
+}
+
+.error-msg {
+    display: none;
+    color: #ff4444;
+    font-size: 11px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.error-msg.show {
+    display: block;
+    animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* ---------- Submit Button ---------- */
+.submit-btn {
+    width: 100%;
+    padding: 14px 20px;
+    background: var(--nissan-red);
+    color: var(--nissan-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    margin-top: 8px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.submit-btn:hover,
+.submit-btn:active {
+    background: var(--nissan-red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(195, 0, 47, 0.35);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(195, 0, 47, 0.25);
+}
+
+.submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.submit-btn .btn-text {
+    display: inline;
+    transition: var(--transition);
+}
+
+.submit-btn .spinner {
+    display: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--nissan-white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}
+
+.submit-btn.loading .btn-text { display: none; }
+.submit-btn.loading .spinner { display: block; }
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.submit-btn.success {
+    background: #28a745;
+    pointer-events: none;
+}
+
+.submit-btn.success .btn-text { display: none; }
+.submit-btn.success::after {
+    content: 'Request Sent!';
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- Success Message ---------- */
+.success-message {
+    display: none;
+    background: #e8f5e9;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    margin-top: 16px;
+    animation: fade-in-up 0.5s ease;
+}
+
+.success-message.show { display: block; }
+
+.success-message h4 {
+    color: #28a745;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.success-message p {
+    color: #555;
+    font-size: 13px;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background: var(--nissan-black);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+.footer .footer-brand {
+    color: var(--nissan-red);
+    font-weight: 700;
+}
+
+.footer-note {
+    margin-top: 4px;
+    font-size: 10px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.7rem; }
+    .hero p { font-size: 13px; }
+    .form-container { padding: 22px 16px; border-radius: 16px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .section-title h2 { font-size: 1.5rem; }
+    .logo-text { font-size: 13px; }
+    .logo-text span:first-child { font-size: 8px; }
+    .rep-name { font-size: 10px; }
+    .contact-number { font-size: 10px; }
+}
+
+@media (min-width: 768px) {
+    .hero h1 { font-size: 3rem; }
+    .hero p { font-size: 17px; }
+    .form-container { padding: 40px 35px; }
+}
